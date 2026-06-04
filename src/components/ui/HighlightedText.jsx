@@ -10,7 +10,10 @@ import { ThinkersUnderline } from './DecorativeShapes';
  *  'bg-green-box'   → #B5D5A8 small box for "can" in services heading
  *  'underline-yellow' → legacy fallback
  */
-export default function HighlightedText({ children, type = 'underline-yellow' }) {
+export default function HighlightedText({
+  children,
+  type = 'underline-yellow',
+}) {
   if (type === 'thinkers') {
     return (
       <span className="highlight-thinkers">

@@ -12,8 +12,8 @@ import styles from './ConnectorLine.module.css';
  */
 export default function ConnectorLine({ aboutImageId, progressImageId }) {
   const wrapperRef = useRef(null);
-  const [path, setPath]     = useState(null);
-  const [svgH, setSvgH]     = useState(400);   // wrapper height in px
+  const [path, setPath] = useState(null);
+  const [svgH, setSvgH] = useState(400); // wrapper height in px
 
   useEffect(() => {
     function calculate() {
@@ -21,27 +21,27 @@ export default function ConnectorLine({ aboutImageId, progressImageId }) {
       if (!wrapper) return;
 
       const aboutEl = document.getElementById(aboutImageId);
-      const progEl  = document.getElementById(progressImageId);
+      const progEl = document.getElementById(progressImageId);
       if (!aboutEl || !progEl) return;
 
-      const wRect  = wrapper.getBoundingClientRect();
-      const aRect  = aboutEl.getBoundingClientRect();
-      const pRect  = progEl.getBoundingClientRect();
+      const wRect = wrapper.getBoundingClientRect();
+      const aRect = aboutEl.getBoundingClientRect();
+      const pRect = progEl.getBoundingClientRect();
 
       // Convert element screen coords → coords inside the wrapper
       // wRect.top can vary as the user scrolls, so use offsetTop from document
       const wTop = wrapper.offsetTop; // px from document top (scroll-invariant)
 
-      const aTop  = aboutEl.getBoundingClientRect().top + window.scrollY;
-      const pTop  = progEl.getBoundingClientRect().top  + window.scrollY;
+      const aTop = aboutEl.getBoundingClientRect().top + window.scrollY;
+      const pTop = progEl.getBoundingClientRect().top + window.scrollY;
 
       // Start: bottom-center of About circle (relative to wrapper top)
-      const x1 = aRect.left + aRect.width  / 2;   // screen x (no scroll offset for x)
-      const y1 = (aTop + aRect.height) - wTop;     // bottom of circle from wrapper top
+      const x1 = aRect.left + aRect.width / 2; // screen x (no scroll offset for x)
+      const y1 = aTop + aRect.height - wTop; // bottom of circle from wrapper top
 
       // End: top-center of Progress circle (relative to wrapper top)
       const x2 = pRect.left + pRect.width / 2;
-      const y2 = pTop - wTop;                      // top of circle from wrapper top
+      const y2 = pTop - wTop; // top of circle from wrapper top
 
       // SVG width = viewport width, height = total wrapper height
       const totalH = Math.max(y2 + pRect.height + 60, y1 + 60);
@@ -126,4 +126,3 @@ export default function ConnectorLine({ aboutImageId, progressImageId }) {
     </div>
   );
 }
-

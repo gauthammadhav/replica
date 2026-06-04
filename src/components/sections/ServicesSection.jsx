@@ -1,6 +1,6 @@
 import styles from './ServicesSection.module.css';
-import HighlightedText from './ui/HighlightedText';
-import { YellowScribble } from './ui/DecorativeShapes';
+import HighlightedText from '../ui/HighlightedText';
+import { YellowScribble } from '../ui/DecorativeShapes';
 
 const services = [
   {
@@ -20,13 +20,12 @@ const services = [
   },
 ];
 
-
-
 /**
  * SweepingHook — perfectly matched S-curve.
  */
 function SweepingHook() {
-  const d = 'M -70 140 C -50 160, -30 160, -20 120 C -10 80, 50 20, 150 20 C 350 20, 450 140, 650 140 C 750 140, 850 40, 950 40';
+  const d =
+    'M -70 140 C -50 160, -30 160, -20 120 C -10 80, 50 20, 150 20 C 350 20, 450 140, 650 140 C 750 140, 850 40, 950 40';
   return (
     <svg
       className={styles.sweepingHook}
@@ -36,7 +35,13 @@ function SweepingHook() {
       aria-hidden="true"
     >
       <defs>
-        <filter id="sweepingShadow" x="-20%" y="-20%" width="140%" height="140%">
+        <filter
+          id="sweepingShadow"
+          x="-20%"
+          y="-20%"
+          width="140%"
+          height="140%"
+        >
           <feDropShadow
             dx="0"
             dy="6"
@@ -60,22 +65,25 @@ function SweepingHook() {
 
 export default function ServicesSection() {
   return (
-    <section className={styles.section} id="services" aria-label="Services section">
+    <section
+      className={styles.section}
+      id="services"
+      aria-label="Services section"
+    >
       <div className={`${styles.inner} container`}>
         {/* Section heading block */}
         <div className={styles.headingBlock}>
           <h2 className={styles.heading}>
-            What we{' '}
-            <HighlightedText type="bg-green-box">can</HighlightedText>
+            What we <HighlightedText type="bg-green-box">can</HighlightedText>
             <br />
             {/* "offer" wrapped for the zigzag underline */}
             <span className={styles.offerWrap}>
               offer
               <YellowScribble className={styles.offerUnderline} />
-            </span>
-            {' '}you!
+            </span>{' '}
+            you!
           </h2>
-          
+
           {/* Hook is positioned absolutely relative to the heading text block */}
           <SweepingHook />
         </div>
@@ -83,14 +91,12 @@ export default function ServicesSection() {
         {/* Services list */}
         <div className={styles.servicesList} role="list">
           {services.map((service) => (
-            <div
-              key={service.id}
-              className={styles.serviceRow}
-              role="listitem"
-            >
+            <div key={service.id} className={styles.serviceRow} role="listitem">
               <span className={styles.serviceLabel}>{service.label}</span>
               <span className={styles.serviceName}>{service.name}</span>
-              <span className={styles.serviceArrow} aria-hidden="true">→</span>
+              <span className={styles.serviceArrow} aria-hidden="true">
+                →
+              </span>
             </div>
           ))}
         </div>

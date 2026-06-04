@@ -1,6 +1,11 @@
 import styles from './CircularImage.module.css';
 
-export default function CircularImage({ src, size = 80, alt = 'Profile photo', id }) {
+export default function CircularImage({
+  src,
+  size = 80,
+  alt = 'Profile photo',
+  id,
+}) {
   return (
     <div
       id={id}
@@ -11,4 +16,3 @@ export default function CircularImage({ src, size = 80, alt = 'Profile photo', i
     </div>
   );
 }
-

@@ -15,11 +15,14 @@ export default function Navbar() {
         </div>
 
         {/* Center nav links — DM Sans 15px, weight 400, #444444 (Figma-confirmed) */}
-        <ul className={`${styles.links} ${isOpen ? styles.menuOpen : ''}`} role="list">
+        <ul
+          className={`${styles.links} ${isOpen ? styles.menuOpen : ''}`}
+          role="list"
+        >
           {navLinks.map((link) => (
             <li key={link}>
-              <a 
-                href={`#${link.toLowerCase()}`} 
+              <a
+                href={`#${link.toLowerCase()}`}
                 className={styles.link}
                 onClick={() => setIsOpen(false)}
               >
@@ -30,8 +33,8 @@ export default function Navbar() {
         </ul>
 
         {/* Hamburger — visible on mobile only */}
-        <button 
-          className={`${styles.hamburger} ${isOpen ? styles.isOpen : ''}`} 
+        <button
+          className={`${styles.hamburger} ${isOpen ? styles.isOpen : ''}`}
           aria-label="Open menu"
           onClick={() => setIsOpen(!isOpen)}
         >

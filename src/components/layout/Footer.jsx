@@ -15,7 +15,12 @@ const footerColumns = [
   },
   {
     title: 'Get in Touch',
-    links: ['123 Main St, New York', '+1 (555) 000-0000', 'hello@elementum.co', 'Contact Us'],
+    links: [
+      '123 Main St, New York',
+      '+1 (555) 000-0000',
+      'hello@elementum.co',
+      'Contact Us',
+    ],
   },
 ];
 

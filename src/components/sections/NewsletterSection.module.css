@@ -35,7 +35,7 @@
 .button {
   margin-top: 8px;
   background: var(--color-text-primary);
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
   border-radius: var(--border-radius-btn);
   padding: 15px 40px;
@@ -44,7 +44,10 @@
   font-weight: 500;
   cursor: pointer;
   letter-spacing: 0.3px;
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition:
+    background var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
 }
 
 .button:hover {

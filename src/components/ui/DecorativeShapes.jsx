@@ -201,7 +201,12 @@ export function RedTriangleLeft({ className = '', style = {}, size = 1 }) {
 /**
  * RedSquiggle — wavy red/coral path for section transitions
  */
-export function RedSquiggle({ className = '', style = {}, width = 120, height = 80 }) {
+export function RedSquiggle({
+  className = '',
+  style = {},
+  width = 120,
+  height = 80,
+}) {
   return (
     <svg
       className={className}

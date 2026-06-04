@@ -1,20 +1,26 @@
 import styles from './NewsletterSection.module.css';
-import { PurpleTeardrop, RedSquiggle } from './ui/DecorativeShapes';
+import { PurpleTeardrop, RedSquiggle } from '../ui/DecorativeShapes';
 
 export default function NewsletterSection() {
   return (
-    <section className={styles.section} id="newsletter" aria-label="Newsletter subscription section">
+    <section
+      className={styles.section}
+      id="newsletter"
+      aria-label="Newsletter subscription section"
+    >
       {/* Decorative elements */}
       <RedSquiggle className={styles.squiggleTopLeft} width={120} height={70} />
-      <PurpleTeardrop className={styles.teardropBottomRight} />
+      <PurpleTeardrop className={styles.teardropBottomRight} size={0.8} />
 
       <div className={`${styles.inner} container`}>
         <h2 className={styles.heading}>
-          Subscribe to<br />our newsletter
+          Subscribe to
+          <br />
+          our newsletter
         </h2>
         <p className={styles.subtext}>
-          Stay up to date with our latest news, projects, and insights.
-          No spam, unsubscribe at any time.
+          Stay up to date with our latest news, projects, and insights. No spam,
+          unsubscribe at any time.
         </p>
         <button
           className={styles.button}

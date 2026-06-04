@@ -1,6 +1,6 @@
 import styles from './Hero.module.css';
-import HighlightedText from './ui/HighlightedText';
-import { DoubleSquiggle, PurpleFrame } from './ui/DecorativeShapes';
+import HighlightedText from '../ui/HighlightedText';
+import { DoubleSquiggle, PurpleFrame } from '../ui/DecorativeShapes';
 
 import p1 from '../../images/p1.png';
 import p2 from '../../images/p2.png';
@@ -30,19 +30,19 @@ import p8 from '../../images/p8.png';
 // This gives ~160-190px gaps between pairs and ~40px overlap within each pair.
 const photos = [
   // ── PAIR 1 — far left ─────────────────────────────────────────────────────
-  { src: p1, size: 170, left:  '0.9%', top: '148px', zIndex: 1 }, // lower
-  { src: p2, size: 150, left:  '7.6%', top:  '10px', zIndex: 2 }, // upper
+  { src: p1, size: 170, left: '0.9%', top: '148px', zIndex: 1 }, // lower
+  { src: p2, size: 150, left: '7.6%', top: '10px', zIndex: 2 }, // upper
 
   // ── PAIR 2 — left-center ──────────────────────────────────────────────────
-  { src: p3, size: 170, left: '27.7%', top:  '10px', zIndex: 1 }, // upper
+  { src: p3, size: 170, left: '27.7%', top: '10px', zIndex: 1 }, // upper
   { src: p4, size: 150, left: '35.2%', top: '148px', zIndex: 2 }, // lower
 
   // ── PAIR 3 — center ───────────────────────────────────────────────────────
-  { src: p5, size: 150, left: '53.7%', top:  '10px', zIndex: 1 }, // upper
+  { src: p5, size: 150, left: '53.7%', top: '10px', zIndex: 1 }, // upper
   { src: p6, size: 150, left: '60.9%', top: '148px', zIndex: 2 }, // lower
 
   // ── PAIR 4 — far right ────────────────────────────────────────────────────
-  { src: p7, size: 170, left: '78.3%', top:  '10px', zIndex: 1 }, // upper
+  { src: p7, size: 170, left: '78.3%', top: '10px', zIndex: 1 }, // upper
   { src: p8, size: 150, left: '86.0%', top: '148px', zIndex: 2 }, // lower → ends at ~95%
 ];
 
@@ -59,25 +59,23 @@ export default function Hero() {
         {/* Main heading — Figma: bold geometric sans-serif, ~96px */}
         <h1 className={styles.heading}>
           <span className={styles.line1}>
-            The{' '}
-            <HighlightedText type="thinkers">thinkers</HighlightedText>
-            {' '}and
+            The <HighlightedText type="thinkers">thinkers</HighlightedText> and
           </span>
           <span className={styles.line2}>
             doers were{' '}
             <HighlightedText type="bg-pink">changing</HighlightedText>
           </span>
           <span className={styles.line3}>
-            the{' '}
-            <HighlightedText type="bg-green">status</HighlightedText>
-            {' '}Quo with
+            the <HighlightedText type="bg-green">status</HighlightedText> Quo
+            with
           </span>
         </h1>
 
         {/* Subtext paragraph */}
         <p className={styles.subtext}>
           We are a team of strategists, designers communicators, researchers.
-          Together, we believe that progress only happens when you refuse to play things safe.
+          Together, we believe that progress only happens when you refuse to
+          play things safe.
         </p>
       </div>
 
@@ -87,7 +85,13 @@ export default function Hero() {
           <div
             key={i}
             className={styles.photoWrapper}
-            style={{ width: p.size, height: p.size, left: p.left, top: p.top, zIndex: p.zIndex }}
+            style={{
+              width: p.size,
+              height: p.size,
+              left: p.left,
+              top: p.top,
+              zIndex: p.zIndex,
+            }}
           >
             <img src={p.src} alt="" />
           </div>

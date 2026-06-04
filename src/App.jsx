@@ -1,12 +1,12 @@
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import AboutSection from './components/AboutSection';
-import ConnectorLine from './components/ConnectorLine';
-import ProgressSection from './components/ProgressSection';
-import ServicesSection from './components/ServicesSection';
-import TestimonialSection from './components/TestimonialSection';
-import NewsletterSection from './components/NewsletterSection';
-import Footer from './components/Footer';
+import Navbar from './components/layout/Navbar';
+import Hero from './components/sections/Hero';
+import AboutSection from './components/sections/AboutSection';
+import ConnectorLine from './components/ui/ConnectorLine';
+import ProgressSection from './components/sections/ProgressSection';
+import ServicesSection from './components/sections/ServicesSection';
+import TestimonialSection from './components/sections/TestimonialSection';
+import NewsletterSection from './components/sections/NewsletterSection';
+import Footer from './components/layout/Footer';
 
 export default function App() {
   return (

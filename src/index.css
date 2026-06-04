@@ -15,19 +15,19 @@
   --font-display: 'Gerbil', sans-serif;
   --font-body: 'Satoshi', sans-serif;
 
-  --color-bg: #FFFFFF;
-  --color-bg-cream: #F5F4EF;
-  --color-bg-muted: #D6E5D4;
-  --color-text-primary: #1A1A1A;
+  --color-bg: #ffffff;
+  --color-bg-cream: #f5f4ef;
+  --color-bg-muted: #d6e5d4;
+  --color-text-primary: #1a1a1a;
   --color-text-body: #555555;
   --color-text-muted: #888888;
 
-  --accent-pink: #F9C4CE;
-  --accent-yellow: #C9B84C;
-  --accent-green: #B5D5A8;
-  --accent-red: #E8463A;
-  --accent-coral: #F28B7D;
-  --accent-purple: #9B72CF;
+  --accent-pink: #f9c4ce;
+  --accent-yellow: #c9b84c;
+  --accent-green: #b5d5a8;
+  --accent-red: #e8463a;
+  --accent-coral: #f28b7d;
+  --accent-purple: #9b72cf;
 
   --section-padding: 100px 0;
   --max-width: 1200px;
@@ -39,7 +39,9 @@
 /* =============================================
    GLOBAL RESET & BASE
    ============================================= */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

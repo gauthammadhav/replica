@@ -83,7 +83,10 @@
   height: 2px;
   background: var(--color-text-primary);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease, background var(--transition);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    background var(--transition);
 }
 
 .hamburger.isOpen span:nth-child(1) {
@@ -120,7 +123,7 @@
     display: flex;
     z-index: 101;
   }
-  
+
   .links {
     position: fixed;
     top: 0;
@@ -136,10 +139,13 @@
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s ease;
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease,
+      visibility 0.4s ease;
     z-index: 100;
   }
-  
+
   .links.menuOpen {
     transform: translateY(0);
     opacity: 1;

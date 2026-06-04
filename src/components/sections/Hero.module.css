@@ -6,7 +6,7 @@
 
 .hero {
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   overflow: hidden;
   padding-top: 72px;
   padding-bottom: 25px; /* allow bottom of lower-row circles to show */
@@ -19,7 +19,11 @@
   left: 0;
   right: 0;
   height: 120px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #F5F4EF 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #f5f4ef 100%
+  );
   pointer-events: none;
   z-index: 5;
 }
@@ -107,9 +111,11 @@
   border-radius: 50%;
   overflow: hidden;
   /* White ring separates overlapping circles — key Figma detail */
-  outline: 3px solid #FFFFFF;
+  outline: 3px solid #ffffff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .photoWrapper:hover {

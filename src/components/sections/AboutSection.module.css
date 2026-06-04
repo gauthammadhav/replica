@@ -1,58 +1,17 @@
 .section {
   position: relative;
-  background: #F5F4EF;
+  background: #f5f4ef;
   padding: var(--section-padding);
-  overflow: hidden;
 }
 
 .inner {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 60px;
   align-items: center;
 }
 
-/* Left image column */
-.imageCol {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Soft green blob */
-.blob {
-  position: absolute;
-  width: 460px;
-  height: 460px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(181, 213, 168, 0.4) 0%, rgba(181, 213, 168, 0) 70%);
-  filter: blur(40px);
-  z-index: 0;
-  left: -30px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* Triangle top-right */
-.triangleTopRight {
-  position: absolute;
-  top: -20px;
-  right: 50%;
-  transform: translateX(140px) rotate(180deg);
-  z-index: 3;
-}
-
-/* Triangle bottom-left */
-.triangleBottomLeft {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-160px);
-  z-index: 3;
-}
-
-/* Right text column */
+/* Left text column */
 .textCol {
   display: flex;
   flex-direction: column;
@@ -93,12 +52,56 @@
   gap: 18px;
 }
 
-.dash {
+.arrow {
   transition: transform var(--transition);
 }
 
-.readMore:hover .dash {
+.readMore:hover .arrow {
   transform: translateX(4px);
+}
+
+/* Right image column */
+.imageCol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Radial blob */
+.blob {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(249, 196, 206, 0.5) 0%,
+    rgba(249, 196, 206, 0) 70%
+  );
+  filter: blur(40px);
+  z-index: 0;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Triangle top-left corner of image */
+.triangleTopLeft {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-170px) rotate(180deg);
+  z-index: 3;
+}
+
+/* Triangle bottom-right corner of image */
+.triangleBottomRight {
+  position: absolute;
+  bottom: -30px;
+  right: 50%;
+  transform: translateX(90px);
+  z-index: 3;
 }
 
 /* Tablet */
@@ -114,12 +117,18 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .triangleTopRight,
-  .triangleBottomLeft {
+  .imageCol {
+    order: -1;
+  }
+  .triangleTopLeft,
+  .triangleBottomRight {
     display: none;
   }
   .blob {
     width: 260px;
     height: 260px;
+  }
+  .bottomSquiggle {
+    display: none;
   }
 }

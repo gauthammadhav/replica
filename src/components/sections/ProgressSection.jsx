@@ -1,10 +1,14 @@
 import styles from './ProgressSection.module.css';
-import CircularImage from './ui/CircularImage';
-import { RedTriangleLeft } from './ui/DecorativeShapes';
+import CircularImage from '../ui/CircularImage';
+import { RedTriangleLeft } from '../ui/DecorativeShapes';
 
 export default function ProgressSection() {
   return (
-    <section className={styles.section} id="progress" aria-label="Progress section">
+    <section
+      className={styles.section}
+      id="progress"
+      aria-label="Progress section"
+    >
       <div className={`${styles.inner} container`}>
         {/* Left column — image */}
         <div className={styles.imageCol}>
@@ -12,10 +16,7 @@ export default function ProgressSection() {
           <div className={styles.blob} aria-hidden="true" />
 
           {/* Triangle top-right */}
-          <RedTriangleLeft
-            className={styles.triangleTopRight}
-            size={0.9}
-          />
+          <RedTriangleLeft className={styles.triangleTopRight} size={0.9} />
 
           <CircularImage
             id="progress-circle"
@@ -25,10 +26,7 @@ export default function ProgressSection() {
           />
 
           {/* Triangle bottom-left */}
-          <RedTriangleLeft
-            className={styles.triangleBottomLeft}
-            size={1.1}
-          />
+          <RedTriangleLeft className={styles.triangleBottomLeft} size={1.1} />
         </div>
 
         {/* Right column — text */}
@@ -38,7 +36,8 @@ export default function ProgressSection() {
           </h2>
           <p className={styles.body}>
             We are a team of strategists, designers communicators, researchers.
-            Together, we believe that progress only happens when you refuse to play things safe.
+            Together, we believe that progress only happens when you refuse to
+            play things safe.
           </p>
           <a href="#contact" className={styles.readMore}>
             Read more <span className={styles.dash}>——————→</span>

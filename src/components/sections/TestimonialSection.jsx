@@ -27,21 +27,24 @@ import t8 from '../../images/t8.png';
 
 const circles = [
   // LEFT
-  { id: 1, size: 110, style: { top: '10%', left: '8%'   }, src: t1 },
-  { id: 2, size: 60,  style: { top: '40%', left: '4%'   }, src: t2 },
-  { id: 3, size: 180, style: { top: '45%', left: '9%'   }, src: t3 },
-  { id: 4, size: 80,  style: { top: '70%', left: '3%'   }, src: t4 },
+  { id: 1, size: 110, style: { top: '10%', left: '8%' }, src: t1 },
+  { id: 2, size: 60, style: { top: '40%', left: '4%' }, src: t2 },
+  { id: 3, size: 180, style: { top: '45%', left: '9%' }, src: t3 },
+  { id: 4, size: 80, style: { top: '70%', left: '3%' }, src: t4 },
   // RIGHT
-  { id: 5, size: 80,  style: { top: '22%', right: '16%' }, src: t6 },
-  { id: 6, size: 110, style: { top: '10%', right: '3%'  }, src: t7 },
+  { id: 5, size: 80, style: { top: '22%', right: '16%' }, src: t6 },
+  { id: 6, size: 110, style: { top: '10%', right: '3%' }, src: t7 },
   { id: 7, size: 100, style: { top: '44%', right: '11%' }, src: t8 },
   { id: 8, size: 240, style: { top: '58%', right: '1%' }, src: t5 }, // t5 mapped to the biggest circle
 ];
 
 export default function TestimonialSection() {
   return (
-    <section className={styles.testimonialSection} id="testimonials" aria-label="Testimonials">
-
+    <section
+      className={styles.testimonialSection}
+      id="testimonials"
+      aria-label="Testimonials"
+    >
       {/* ── 8 Floating circular photos ── */}
       {circles.map(({ id, size, style, src }) => (
         <div
@@ -71,7 +74,8 @@ export default function TestimonialSection() {
       {/* ── CENTER content ── */}
       <div className={styles.center}>
         <h2 className={styles.heading}>
-          <span className={styles.whatHighlight}>What</span>{' our customer'}
+          <span className={styles.whatHighlight}>What</span>
+          {' our customer'}
           <br />
           {'says '}
           <span className={styles.aboutUnderline}>About Us</span>
@@ -83,13 +87,12 @@ export default function TestimonialSection() {
             Elementum delivered the site within the timeline as they requested.
             In the end, the client found a 50% increase in traffic within days
             since its launch. They also had an impressive ability to use
-            technologies that the company hasn't used, which have also proved
-            to be easy to use and reliable.
+            technologies that the company hasn't used, which have also proved to
+            be easy to use and reliable.
           </p>
           <span className={styles.closeQuote}>{'\u201D'}</span>
         </div>
       </div>
-
     </section>
   );
 }

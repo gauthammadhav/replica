@@ -1,7 +1,7 @@
 import styles from './AboutSection.module.css';
-import CircularImage from './ui/CircularImage';
-import HighlightedText from './ui/HighlightedText';
-import { RedTriangle } from './ui/DecorativeShapes';
+import CircularImage from '../ui/CircularImage';
+import HighlightedText from '../ui/HighlightedText';
+import { RedTriangle } from '../ui/DecorativeShapes';
 
 export default function AboutSection() {
   return (
@@ -10,11 +10,14 @@ export default function AboutSection() {
         {/* Left column — text */}
         <div className={styles.textCol}>
           <h2 className={styles.heading}>
-            <HighlightedText type="thinkers">tomorrow</HighlightedText> should{'\n'}be better than <HighlightedText type="bg-green">today</HighlightedText>
+            <HighlightedText type="thinkers">tomorrow</HighlightedText> should
+            {'\n'}be better than{' '}
+            <HighlightedText type="bg-green">today</HighlightedText>
           </h2>
           <p className={styles.body}>
             We are a team of strategists, designers communicators, researchers.
-            Togeather, we belive that progress only happens when you refuse to play things safe.
+            Togeather, we belive that progress only happens when you refuse to
+            play things safe.
           </p>
           <a href="#contact" className={styles.readMore}>
             Read more <span className={styles.arrow}>——————→</span>
@@ -27,10 +30,7 @@ export default function AboutSection() {
           <div className={styles.blob} aria-hidden="true" />
 
           {/* Red triangle — top left corner of image */}
-          <RedTriangle
-            className={styles.triangleTopLeft}
-            size={0.9}
-          />
+          <RedTriangle className={styles.triangleTopLeft} size={0.9} />
 
           <CircularImage
             id="about-circle"
@@ -40,13 +40,9 @@ export default function AboutSection() {
           />
 
           {/* Red triangle — bottom right corner */}
-          <RedTriangle
-            className={styles.triangleBottomRight}
-            size={1.1}
-          />
+          <RedTriangle className={styles.triangleBottomRight} size={1.1} />
         </div>
       </div>
-
     </section>
   );
 }
