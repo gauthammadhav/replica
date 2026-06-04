@@ -1,5 +1,6 @@
 import styles from './ServicesSection.module.css';
 import HighlightedText from './ui/HighlightedText';
+import { YellowScribble } from './ui/DecorativeShapes';
 
 const services = [
   {
@@ -19,40 +20,7 @@ const services = [
   },
 ];
 
-/**
- * OfferUnderline — hand-drawn style double zigzag SVG beneath "offer"
- * Matches Figma's golden/yellow scribble underline (#C9B84C).
- */
-function OfferUnderline() {
-  return (
-    <svg
-      className={styles.offerUnderline}
-      viewBox="0 0 160 14"
-      preserveAspectRatio="none"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      {/* Upper zigzag line */}
-      <path
-        d="M0,5 Q20,0 40,5 Q60,10 80,5 Q100,0 120,5 Q140,10 160,5"
-        stroke="#C9B84C"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      {/* Lower zigzag line — offset for double-line scribble effect */}
-      <path
-        d="M0,9 Q20,4 40,9 Q60,14 80,9 Q100,4 120,9 Q140,14 160,9"
-        stroke="#C9B84C"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        fill="none"
-        opacity="0.75"
-      />
-    </svg>
-  );
-}
+
 
 /**
  * SweepingHook — perfectly matched S-curve.
@@ -103,7 +71,7 @@ export default function ServicesSection() {
             {/* "offer" wrapped for the zigzag underline */}
             <span className={styles.offerWrap}>
               offer
-              <OfferUnderline />
+              <YellowScribble className={styles.offerUnderline} />
             </span>
             {' '}you!
           </h2>
