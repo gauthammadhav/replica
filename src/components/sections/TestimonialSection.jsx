@@ -1,13 +1,13 @@
 import styles from './TestimonialSection.module.css';
 
-import t1 from '../../images/t1.png';
-import t2 from '../../images/t2.png';
-import t3 from '../../images/t3.png';
-import t4 from '../../images/t4.png';
-import t5 from '../../images/t5.png';
-import t6 from '../../images/t6.png';
-import t7 from '../../images/t7.png';
-import t8 from '../../images/t8.png';
+import t1 from '../../../images/t1.png';
+import t2 from '../../../images/t2.png';
+import t3 from '../../../images/t3.png';
+import t4 from '../../../images/t4.png';
+import t5 from '../../../images/t5.png';
+import t6 from '../../../images/t6.png';
+import t7 from '../../../images/t7.png';
+import t8 from '../../../images/t8.png';
 
 /**
  * 8 floating circles extracted from the Figma/screenshot design.
