@@ -1,0 +1,132 @@
+.section {
+  position: relative;
+  background: #F5F4EF;
+  padding: var(--section-padding);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left text column */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--color-text-primary);
+  white-space: pre-line;
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-text-body);
+  max-width: 440px;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: gap var(--transition);
+}
+
+.readMore:hover {
+  gap: 18px;
+}
+
+.arrow {
+  transition: transform var(--transition);
+}
+
+.readMore:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Right image column */
+.imageCol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Radial blob */
+.blob {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(249, 196, 206, 0.5) 0%, rgba(249, 196, 206, 0) 70%);
+  filter: blur(40px);
+  z-index: 0;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Triangle top-left corner of image */
+.triangleTopLeft {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-170px) rotate(180deg);
+  z-index: 3;
+}
+
+/* Triangle bottom-right corner of image */
+.triangleBottomRight {
+  position: absolute;
+  bottom: -30px;
+  right: 50%;
+  transform: translateX(90px);
+  z-index: 3;
+}
+
+
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .inner {
+    gap: 50px;
+  }
+}
+
+/* Tablet Portrait & Mobile */
+@media (max-width: 991px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .imageCol {
+    order: -1;
+  }
+  .triangleTopLeft,
+  .triangleBottomRight {
+    display: none;
+  }
+  .blob {
+    width: 260px;
+    height: 260px;
+  }
+  .bottomSquiggle {
+    display: none;
+  }
+}

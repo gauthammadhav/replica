@@ -1,0 +1,125 @@
+.section {
+  position: relative;
+  background: #F5F4EF;
+  padding: var(--section-padding);
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left image column */
+.imageCol {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Soft green blob */
+.blob {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(181, 213, 168, 0.4) 0%, rgba(181, 213, 168, 0) 70%);
+  filter: blur(40px);
+  z-index: 0;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Triangle top-right */
+.triangleTopRight {
+  position: absolute;
+  top: -20px;
+  right: 50%;
+  transform: translateX(140px) rotate(180deg);
+  z-index: 3;
+}
+
+/* Triangle bottom-left */
+.triangleBottomLeft {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-160px);
+  z-index: 3;
+}
+
+/* Right text column */
+.textCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--color-text-primary);
+  white-space: pre-line;
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--color-text-body);
+  max-width: 440px;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: gap var(--transition);
+}
+
+.readMore:hover {
+  gap: 18px;
+}
+
+.dash {
+  transition: transform var(--transition);
+}
+
+.readMore:hover .dash {
+  transform: translateX(4px);
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .inner {
+    gap: 50px;
+  }
+}
+
+/* Tablet Portrait & Mobile */
+@media (max-width: 991px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .triangleTopRight,
+  .triangleBottomLeft {
+    display: none;
+  }
+  .blob {
+    width: 260px;
+    height: 260px;
+  }
+}

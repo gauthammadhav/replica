@@ -1,0 +1,205 @@
+/* =============================================
+   HERO — Figma-verified styles
+   Background: #FFFFFF pure white (spec says white, visible in Figma)
+   Heading: DM Sans 700+ weight, ~96px, letter-spacing -0.02em
+   ============================================= */
+
+.hero {
+  position: relative;
+  background: #FFFFFF;
+  overflow: hidden;
+  padding-top: 72px;
+  padding-bottom: 25px; /* allow bottom of lower-row circles to show */
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #F5F4EF 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* =============================================
+   DECORATIVE — Double squiggle left, Purple frame right
+   ============================================= */
+.squiggleLeft {
+  position: absolute;
+  left: 32px;
+  top: 50%;
+  transform: translateY(-55%);
+  z-index: 3;
+}
+
+.purpleFrame {
+  position: absolute;
+  right: -30px;
+  top: 42%;
+  z-index: 3;
+}
+
+/* =============================================
+   HEADING
+   Figma: Gerbil 100px, weight 400, line-height 126px
+   ============================================= */
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(52px, 7vw, 100px);
+  font-weight: 400;
+  line-height: 1.26;
+  letter-spacing: -0.01em;
+  color: var(--color-text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 36px;
+}
+
+.line1,
+.line2,
+.line3 {
+  display: block;
+  white-space: nowrap;
+}
+
+/* =============================================
+   SUBTEXT
+   Figma: Satoshi 24px, weight 400, line-height 36px
+   ============================================= */
+.subtext {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-body);
+  max-width: 760px;
+  margin: 0 auto 64px;
+}
+
+/* =============================================
+   PHOTO ROW — Figma-verified absolute positioned scatter layout
+   ============================================= */
+.photoRow {
+  position: relative;
+  width: 100%;
+  /* lower circles: top 148px + size 170px = 318px → 345px with buffer */
+  height: 345px;
+  margin-top: 40px;
+  overflow: visible; /* allow slight left-edge bleed like the Figma design */
+}
+
+.photoWrapper {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+  /* White ring separates overlapping circles — key Figma detail */
+  outline: 3px solid #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photoWrapper:hover {
+  transform: scale(1.08);
+  z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.photoWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top; /* show faces, not chests */
+  display: block;
+}
+
+/* =============================================
+   TABLET — 768px–1199px
+   ============================================= */
+@media (max-width: 1199px) {
+  .heading {
+    font-size: clamp(44px, 6vw, 72px);
+  }
+  .purpleFrame {
+    right: -40px;
+  }
+  .squiggleLeft {
+    left: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .photoRow {
+    height: 320px;
+    transform: scale(0.72);
+    transform-origin: top left;
+  }
+}
+
+/* =============================================
+   MOBILE — < 768px
+   ============================================= */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 48px;
+  }
+  .heading {
+    font-size: 38px;
+    letter-spacing: -0.01em;
+    gap: 2px;
+    white-space: normal;
+  }
+  .line1,
+  .line2,
+  .line3 {
+    white-space: normal;
+  }
+  .squiggleLeft {
+    display: none;
+  }
+  .purpleFrame {
+    display: none;
+  }
+  .subtext {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .photoRow {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 16px 20px;
+    height: auto;
+    transform: none;
+    scrollbar-width: none;
+  }
+
+  .photoRow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .photoWrapper {
+    position: static;
+    flex-shrink: 0;
+    width: 72px !important;
+    height: 72px !important;
+  }
+}

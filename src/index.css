@@ -1,0 +1,165 @@
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap');
+
+@font-face {
+  font-family: 'Gerbil';
+  src: url('./assets/fonts/gerbil.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =============================================
+   DESIGN TOKENS
+   ============================================= */
+:root {
+  --font-display: 'Gerbil', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
+
+  --color-bg: #FFFFFF;
+  --color-bg-cream: #F5F4EF;
+  --color-bg-muted: #D6E5D4;
+  --color-text-primary: #1A1A1A;
+  --color-text-body: #555555;
+  --color-text-muted: #888888;
+
+  --accent-pink: #F9C4CE;
+  --accent-yellow: #C9B84C;
+  --accent-green: #B5D5A8;
+  --accent-red: #E8463A;
+  --accent-coral: #F28B7D;
+  --accent-purple: #9B72CF;
+
+  --section-padding: 100px 0;
+  --max-width: 1200px;
+  --container-px: 80px;
+  --border-radius-btn: 50px;
+  --transition: 0.2s ease;
+}
+
+/* =============================================
+   GLOBAL RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-primary);
+  background: var(--color-bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =============================================
+   LAYOUT UTILITIES
+   ============================================= */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-px);
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+/* =============================================
+   HIGHLIGHT UTILITIES
+   ============================================= */
+
+/* "thinkers" — wrapper for SVG underline positioning */
+.highlight-thinkers {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Pink pill — Figma-confirmed: large border-radius pill shape */
+.highlight-pink {
+  background: var(--accent-pink);
+  border-radius: 60px;
+  padding: 6px 24px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Green pill — Figma-confirmed: large border-radius pill shape */
+.highlight-green {
+  background: var(--accent-green);
+  border-radius: 60px;
+  padding: 6px 24px;
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Services section "can" pill — Figma: fully rounded pill, green background */
+.highlight-green-box {
+  background: var(--accent-green);
+  border-radius: 50px;
+  padding: 6px 16px;
+  display: inline-block;
+}
+
+/* Yellow underline highlight */
+.highlight-yellow-underline {
+  border-bottom: 3px solid var(--accent-yellow);
+  padding-bottom: 2px;
+  display: inline;
+}
+
+/* =============================================
+   SCROLLBAR STYLING
+   ============================================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* =============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================= */
+@media (max-width: 1199px) {
+  :root {
+    --container-px: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --container-px: 24px;
+    --section-padding: 64px 0;
+  }
+}

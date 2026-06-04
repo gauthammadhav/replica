@@ -1,0 +1,28 @@
+/*
+ * ConnectorLine wrapper — a zero-height, non-layout-affecting container.
+ * The SVG is positioned absolutely, reaching UP into AboutSection and
+ * DOWN into ProgressSection using a large negative top and computed height.
+ */
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .wrapper {
+    display: none;
+  }
+}
