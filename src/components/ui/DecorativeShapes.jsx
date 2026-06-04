@@ -223,3 +223,44 @@ export function RedSquiggle({ className = '', style = {}, width = 120, height = 
     </svg>
   );
 }
+
+/**
+ * YellowScribble — A messy, overlapping hand-drawn underline
+ */
+export function YellowScribble({ className = '', style = {} }) {
+  return (
+    <svg
+      className={className}
+      style={{ ...style, overflow: 'visible' }}
+      viewBox="0 0 100 20"
+      preserveAspectRatio="none"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path
+        d="M0,10 Q10,0 20,15 T40,5 T60,18 T80,2 T100,12"
+        stroke="#C9B84C"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5,12 Q15,20 25,5 T45,15 T65,0 T85,18 T95,8"
+        stroke="#C9B84C"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.7"
+      />
+      <path
+        d="M2,8 Q12,3 22,12 T42,10 T62,12 T82,8 T98,10"
+        stroke="#C9B84C"
+        strokeWidth="1"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity="0.5"
+      />
+    </svg>
+  );
+}
